@@ -98,7 +98,7 @@ class MakeDatatable extends AbstractMaker
         sort($this->columnTypes);
         $generator->generateClass(
             $datatableClassDetails->getFullName(),
-            $this->baseSleleton . '/Datatable.tpl.php',
+            $this->baseSleleton . '/datatable.tpl.php',
             [
                 'bounded_full_class_name' => $entityClassDetails->getFullName(),
                 'bounded_class_name' => $entityClassDetails->getShortName(),
