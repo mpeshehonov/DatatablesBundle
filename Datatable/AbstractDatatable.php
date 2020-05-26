@@ -184,7 +184,7 @@ abstract class AbstractDatatable implements DatatableInterface
         $this->doctrine = $doctrine;
         $this->twig = $twig;
         
-        $this->em = $em = $this->getDoctrine()->getManager();
+        $this->em = $em = $this->getEntityManager();
         $metadata = $em->getClassMetadata($this->getEntity());
         $this->columnBuilder = new ColumnBuilder($metadata, $twig, $router, $this->getName(), $em);
 
@@ -288,7 +288,7 @@ abstract class AbstractDatatable implements DatatableInterface
      */
     public function getEntityManager()
     {
-        return $this->em;
+        return $this->getDoctrine()->getManager();
     }
 
     /**
