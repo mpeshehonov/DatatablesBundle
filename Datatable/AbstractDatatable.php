@@ -183,8 +183,8 @@ abstract class AbstractDatatable implements DatatableInterface
         $this->router = $router;
         $this->doctrine = $doctrine;
         $this->twig = $twig;
-
-        $em = $this->getEntityManager();
+        
+        $this-em = $em = $this->getEntityManager();
         $metadata = $em->getClassMetadata($this->getEntity());
         $this->columnBuilder = new ColumnBuilder($metadata, $twig, $router, $this->getName(), $em);
 
